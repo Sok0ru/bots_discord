@@ -85,10 +85,24 @@ robot.on('message', (msg) => { // Реагирование на сообщени
         }
         })
         
+        robot.on("message", message => { //Пришло сообщение.
+          if(message.content.toLowerCase().startsWith(config.prefix + "avatar")) //Выше было
+          {
+          let mb = message.mentions.members.first() || message.member; // Если есть упомянание человека в сообщении, то берём его, если нету, то себя. Расскажу чуть позже.
+          let color = mb.displayHexColor; //Цвет самой высокой роли человека, если цвет невидимый то самой высокой отображаемой роли.
+          if (color == '#000000') color = mb.hoistRole.hexColor;//Цвет самой высокой роли человека.
+          let embed = new Discord.RichEmbed() //Создаём эмбед
+          .setImage(mb.user.avatarURL) //Устанавливаем картинку - аватар человека.
+          .setColor(color) //Цвет.
+          .setFooter("Аватар пользователя " + mb.user.tag); //Устанавливаем в подпись чей это аватар.
+          message.channel.send({embed}); //Отправляем.
+          }
+          })
         
-      /*  Crobot.commands = new Collection();
+        robot.commands = new Collection();
         const foldersPath = path.join(__dirname, 'commands');
         const commandFolders = fs.readdirSync(foldersPath);
+        
         
         for (const folder of commandFolders) {
           const commandsPath = path.join(foldersPath, folder);
@@ -97,26 +111,13 @@ robot.on('message', (msg) => { // Реагирование на сообщени
             const filePath = path.join(commandsPath, file);
             const command = require(filePath);
             if ('data' in command && 'execute' in command) {
-              Crobot.commands.set(command.data.name, command);
+              robot.commands.set(command.data.name, command);
             } else {
-              console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+              console.log(`[WARNING] у этой команды: ${filePath} отсутствует требуемое свойство "данные" или "выполнить".`);
             }
           }
         }
-        
-        const eventsPath = path.join(__dirname, 'events');
-        const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
-        
-        for (const file of eventFiles) {
-          const filePath = path.join(eventsPath, file);
-          const event = require(filePath);
-          if (event.once) {
-            Crobot.once(event.name, (...args) => event.execute(...args));
-          } else {
-            Crobot.on(event.name, (...args) => event.execute(...args));
-          }
-        }
-          */
+          
         const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
         const commands = [];
         robot.commands = new Collection();
@@ -130,7 +131,7 @@ robot.on('message', (msg) => { // Реагирование на сообщени
         
         robot.once("ready", () => 
         {
-            console.log("(Discord.js v14) Ralphi online!");
+            console.log("(Discord.js v14) эта падла работает!!!");
         
             const CLIENT_ID = robot.user.id;
             const rest = new REST;
