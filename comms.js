@@ -55,7 +55,7 @@ function who_Dania2(robot, mess, args) {
 }
 function who_Dania(robot, mess, args) {
     if (words.some(word => mess.content.includes(word))) {
-        mess.channel.send("Почему вы грустите? Может быть, я могу вам помочь?");
+        mess.channel.send(" ");
     } else {
         mess.channel.send('lox');
     }
@@ -63,7 +63,7 @@ function who_Dania(robot, mess, args) {
 
 function serega(robot, mess, args) {
     if (words.some(word => mess.content.includes(word))) {
-        mess.channel.send("Почему вы грустите? Может быть, я могу вам помочь?");
+        mess.channel.send(" ");
     } else {
         mess.channel.send('нытик, подвид полисорбовых');
     }
@@ -96,7 +96,8 @@ var comms_list = [
         name: "serega",
         out: serega,
         about: "серега"
-    }
+    },
+    ///
 ];
 
 

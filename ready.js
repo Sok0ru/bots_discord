@@ -1,9 +1,9 @@
+/*
 const { Events } = require('discord.js');
-
 module.exports = {
-	name: Events.robot.ready,
+	name: Events.client.ready,
 	once: true,
-	execute(robot) {
-		console.log(`работает! вызван ${robot.user.tag}`);
+	execute(client) {
+		console.log(`работает! вызван ${client.user.tag}`);
 	},
-};
+};*/
