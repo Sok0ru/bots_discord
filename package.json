@@ -1,0 +1,31 @@
+{
+  "name": "bot_discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "3": "^2.1.0",
+    "@discordjs/builders": "^1.10.1",
+    "@discordjs/rest": "^2.4.3",
+    "async-limiter": "^1.0.1",
+    "discord-api-types": "^0.37.120",
+    "discord.js": "^11.6.4",
+    "dotenv": "^16.5.0",
+    "fs": "^0.0.1-security",
+    "highrise.sdk": "^1.1.7",
+    "leekslazylogger": "^6.0.0",
+    "long": "^4.0.0",
+    "moment": "^2.30.1",
+    "prism-media": "^0.0.4",
+    "python": "^0.0.4",
+    "snekfetch": "^3.6.4",
+    "timers": "^0.1.1",
+    "tweetnacl": "^1.0.3",
+    "ws": "^6.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
