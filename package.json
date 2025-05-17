@@ -19,6 +19,7 @@
     "prism-media": "^0.0.4",
     "python": "^0.0.4",
     "snekfetch": "^3.6.4",
+    "timers": "^0.1.1",
     "tweetnacl": "^1.0.3",
     "ws": "^6.2.3"
   },

@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
-// commands/process.js
 module.exports = {
     data: new SlashCommandBuilder()
       .setName('process')

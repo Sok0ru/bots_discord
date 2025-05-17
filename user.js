@@ -10,6 +10,6 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		await interaction.reply(`
-Эта команда была запущена пользователем  ${interaction.user.username}, добавлена поьзователем ${interaction.member.joinedAt}.`);
+Эта команда была запущена пользователем  ${interaction.user.username}, добавлена пользователем ${interaction.member.joinedAt}.`);
 	},
 };
